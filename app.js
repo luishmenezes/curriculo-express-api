@@ -8,9 +8,6 @@ const personRoutes = require('./routes/personRoutes');
 app.use(express.json());
 app.use('/api', personRoutes);
 
-app.get('/', (req, res) => {
-  res.redirect('/persons');
-});
 
 const PORT = 3001;
 db.sequelize.sync().then(() => {
