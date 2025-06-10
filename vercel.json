@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "functions": {
-    "api/persons.js": {
-      "runtime": "nodejs18.x"
+  "builds": [
+    {
+      "src": "api/persons.js",
+      "use": "@vercel/node"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
