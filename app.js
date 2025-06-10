@@ -9,7 +9,7 @@ app.use(express.json());
 app.use('/api', personRoutes);
 
 
-const PORT = 3001;
+const PORT = 3000;
 db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);
