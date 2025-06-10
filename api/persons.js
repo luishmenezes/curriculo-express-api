@@ -1,12 +1,12 @@
 const express = require('express');
 const serverless = require('serverless-http');
-require('dotenv').config();
-
-const db = require('../models');
 const personRoutes = require('../routes/personRoutes');
 
 const app = express();
 app.use(express.json());
+
+// Monta as rotas em /api
 app.use('/api', personRoutes);
 
-module.exports = serverless(app);
+module.exports = app;
+module.exports.handler = serverless(app);

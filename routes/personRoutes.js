@@ -1,11 +1,8 @@
-// api/persons.js
 const express = require('express');
+const router = express.Router();
 const db = require('../models');
-const app = express();
 
-app.use(express.json());
-
-app.get('/api/persons', async (req, res) => {
+router.get('/persons', async (req, res) => {
     try {
         const persons = await db.Person.findAll({
             include: [db.Education, db.Experience, db.Project, db.Skill],
@@ -16,6 +13,4 @@ app.get('/api/persons', async (req, res) => {
     }
 });
 
-
-module.exports = app;
-module.exports.handler = require('serverless-http')(app);
+module.exports = router;
