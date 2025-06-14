@@ -9,6 +9,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
             rejectUnauthorized: false, // Necessário para Render e outros hosts cloud
         },
     },
+    dialectModule: require("pg"),
 });
 
 const db = {};
